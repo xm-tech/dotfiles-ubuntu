@@ -1,12 +1,3 @@
-" 防止重复加载
-" if get(s:, 'loaded', 0) != 0
-" 	finish
-" endif
-" let s:loaded = 1
-
-
-" source ~/vim/vim-init/init.vim
-
 call plug#begin('~/.vim/plugged')
 
 Plug 'AndrewRadev/splitjoin.vim'
@@ -28,10 +19,7 @@ Plug 'hashivim/vim-hashicorp-tools'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
 Plug 'mileszs/ack.vim'
-Plug 'plasticboy/vim-markdown'
 Plug 'roxma/vim-tmux-clipboard'
-" Plug 'scrooloose/nerdtree'
-" Plug 't9md/vim-choosewin'
 Plug 'tmux-plugins/vim-tmux', {'for': 'tmux'}
 Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'tpope/vim-commentary'
@@ -41,14 +29,10 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-scriptease'
 Plug 'tyru/open-browser.vim'
-" Plug 'epmatsw/ag.vim'
 Plug 'vim-scripts/indentpython.vim'
 
 " Error checking
 Plug 'w0rp/ale'
-
-" Markdown
-Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install_sync()}, 'for' :['markdown', 'vim-plug'] }
 
 " Use release branch (Recommend)
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -63,7 +47,6 @@ Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' }
 Plug 'justinmk/vim-dirvish'
 
 Plug 'rhysd/vim-clang-format'
-
 Plug 'skywind3000/vim-cppman'
 
 call plug#end()
@@ -477,22 +460,11 @@ nnoremap <leader>ui :<C-u>call <SID>create_go_doc_comment()<CR>
 " ==================== coc.nvim =====================
 let g:coc_global_extensions = [
       \ 'coc-json',
-      \ 'coc-vimlsp',
-      \ 'coc-cmake',
-      \ 'coc-python',
-      \ 'coc-pyright',
       \ 'coc-sh',
       \ 'coc-go',
       \ 'coc-lua',
-      \ 'coc-jedi',
-      \ 'coc-tsserver',
-      \ 'coc-markdownlint',
-      \ 'coc-sql',
       \ 'coc-clangd',
-      \ 'coc-rust-analyzer',
-      \ 'coc-snippets',
-      \ 'coc-java',
-      \ 'coc-docker']
+      \ 'coc-snippets']
 " Use <c-space> to trigger completion.
 if has('nvim')
   inoremap <silent><expr> <c-space> coc#refresh()
