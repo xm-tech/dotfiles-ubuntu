@@ -1,5 +1,9 @@
 
 " ============================= Leaderf =====================================
+" specify py versions
+set pythonthreedll=/usr/lib/python3.11/config-3.11-arm-linux-gnueabihf/libpython3.11.so
+
+"
 " don't show the help in normal mode
 let g:Lf_HideHelp = 1
 let g:Lf_ShowRelativePath = 1

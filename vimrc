@@ -35,7 +35,7 @@ Plug 'vim-scripts/indentpython.vim'
 Plug 'w0rp/ale'
 
 " Use release branch (Recommend)
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'skywind3000/gutentags_plus'
@@ -365,7 +365,7 @@ if has('terminal')
 
   " mappings to move out from terminal to other views
   tnoremap <C-h> <C-w>h
-  tnoremap <C-j> <C-w>j
+  " tnoremap <C-j> <C-w>j
   tnoremap <C-k> <C-w>k
   tnoremap <C-l> <C-w>l
 
@@ -457,21 +457,6 @@ nnoremap <leader>ui :<C-u>call <SID>create_go_doc_comment()<CR>
 
 "===================== PLUGINS ======================
 "
-" ==================== coc.nvim =====================
-let g:coc_global_extensions = [
-      \ 'coc-json',
-      \ 'coc-sh',
-      \ 'coc-go',
-      \ 'coc-lua',
-      \ 'coc-clangd',
-      \ 'coc-snippets']
-" Use <c-space> to trigger completion.
-if has('nvim')
-  inoremap <silent><expr> <c-space> coc#refresh()
-else
-  " inoremap <silent><expr> <c-@> coc#refresh()
-  inoremap <silent> <c-@> <c-r>=coc#refresh()<cr>
-endif
 
 " ==================== open-browser ====================
 
@@ -500,7 +485,6 @@ let g:delimitMate_smart_matchpairs = '^\%(\w\|\$\)'
 
 " imap <expr> <CR> pumvisible() ? "\<c-y>" : "<Plug>delimitMateCR"
 " imap <expr> <CR> pumvisible() ? "\<c-y>" : "\<CR>"
-inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<C-y>"
 
 
 " ==================== vim-json ====================
@@ -557,3 +541,12 @@ endfunction
 
 " Save a file as root (,W)
 noremap <leader>W :w !sudo tee % > /dev/null<CR>
+
+function! ToggleVerbose()
+	if !&verbose
+		set verbosefile=~/.log/vim/verbose.log
+		set verbose=15
+	else
+		set verbose=0
+		set verbosefile=
+endfunction

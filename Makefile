@@ -9,6 +9,10 @@ dep:
 	sudo apt install cscope
 	sudo apt install ripgrep
 	sudo apt install universal-ctags
+	sudo apt install -y nodejs npm
+
+conf-node:
+	npm config set registry https://registry.npm.taobao.org/
 
 install-pyenv:
 	curl https://pyenv.run | bash
