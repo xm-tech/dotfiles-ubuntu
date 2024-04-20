@@ -13,6 +13,7 @@ dep:
 	sudo apt install axel
 	sudo apt install gh
 	sudo apt install net-tools
+	sudo apt install -y golang-go
 
 conf-node:
 	npm config set registry https://registry.npm.taobao.org/
@@ -33,7 +34,9 @@ install-python:
 	sudo pipx ensurepath
 	pipx ensurepath
 vim-plug:
-	curl -fLo ~/.vim/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+	# curl -fLo ~/.vim/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+	mkdir -p ~/.vim/autoload
+	cp -f ./plug.vim ~/.vim/autoload/plug.vim
 
 up-vim-plug:
 	mkdir -p ~/.vim/plugin && \cp -rf $(PWD)/plugin/* ~/.vim/plugin/
