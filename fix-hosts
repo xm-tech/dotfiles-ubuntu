@@ -1,0 +1,10 @@
+grep 'githubusercontent' /etc/hosts
+
+if [ $? -eq 0 ]
+then
+  echo "already set"
+  exit
+else
+  sudo -- sh -c "cat hosts-githubusercontent >> /etc/hosts"
+  echo "set succ"
+fi

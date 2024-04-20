@@ -1,0 +1,4 @@
+pyenvdir=$(pyenv root)/plugins/pyenv-virtualenv
+rm -rf ${pyenvdir}
+echo "removed old ${pyenvdir}"
+git clone git@github.com:pyenv/pyenv-virtualenv.git ${pyenvdir}

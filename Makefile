@@ -14,12 +14,18 @@ dep:
 	sudo apt install gh
 	sudo apt install net-tools
 	sudo apt install -y golang-go
+	sudo apt install silversearcher-ag
+
 
 conf-node:
 	npm config set registry https://registry.npm.taobao.org/
 
 install-pyenv:
+	# Simple Python version management
 	curl https://pyenv.run | bash
+
+install-pyenv-virtualenv:
+	/bin/zsh ./install-pyenv-virtualenv
 
 #install-python: install-pyenv
 install-python: 
@@ -45,7 +51,10 @@ up3rd:
 	# git submodule add git@github.com:xm-tech/z.lua.git z.lua
 	git submodule update --init --recursive
 
-install:
+hosts:
+	/bin/zsh ./fix-hosts
+
+install: install-pyenv-virtualenv
 	mkdir -p ~/.vim/plugin && \cp -rf $(PWD)/plugin/* ~/.vim/plugin/
 
 	[ -f ~/.vimrc ] || ln -s $(PWD)/vimrc ~/.vimrc
@@ -73,4 +82,4 @@ clean:
 	rm -f ~/.clang-format
 	rm -rf ~/.vim/plugin
 
-.PHONY: all dep up3rd clean install
+.PHONY: all dep conf-node install-pyenv install-pyenv-virtualenv install-python vim-plug up-vim-plug up3rd hosts install clean
