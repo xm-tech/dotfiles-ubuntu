@@ -10,6 +10,9 @@ dep:
 	sudo apt install ripgrep
 	sudo apt install universal-ctags
 	sudo apt install -y nodejs npm
+	sudo apt install axel
+	sudo apt install gh
+	sudo apt install net-tools
 
 conf-node:
 	npm config set registry https://registry.npm.taobao.org/
@@ -28,6 +31,7 @@ install-python:
 	sudo apt install pipx
 	sudo pipx install pygments
 	sudo pipx ensurepath
+	pipx ensurepath
 vim-plug:
 	curl -fLo ~/.vim/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
@@ -35,7 +39,7 @@ up-vim-plug:
 	mkdir -p ~/.vim/plugin && \cp -rf $(PWD)/plugin/* ~/.vim/plugin/
 
 up3rd:
-	git submodule add git@github.com:xm-tech/z.lua.git z.lua
+	# git submodule add git@github.com:xm-tech/z.lua.git z.lua
 	git submodule update --init --recursive
 
 install:
