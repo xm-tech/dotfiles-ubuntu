@@ -15,7 +15,11 @@ dep:
 	sudo apt install net-tools
 	sudo apt install -y golang-go
 	sudo apt install silversearcher-ag
+	sudo apt install autoconf automake libtool
 
+fix-libc-bin:
+	# if error : dpkg: error processing package libc-bin (--configure)
+	sudo apt reinstall libc-bin
 
 conf-node:
 	npm config set registry https://registry.npm.taobao.org/
@@ -82,4 +86,4 @@ clean:
 	rm -f ~/.clang-format
 	rm -rf ~/.vim/plugin
 
-.PHONY: all dep conf-node install-pyenv install-pyenv-virtualenv install-python vim-plug up-vim-plug up3rd hosts install clean
+.PHONY: all dep conf-node install-pyenv install-pyenv-virtualenv install-python vim-plug up-vim-plug up3rd hosts install clean fix-libc-bin

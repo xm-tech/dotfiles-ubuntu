@@ -1,0 +1,19 @@
+# This file is generated from information provided by the datasource.  Changes
+# to it will not persist across an instance reboot.  To disable cloud-init's
+# network configuration capabilities, write a file
+# /etc/cloud/cloud.cfg.d/99-disable-network-config.cfg with the following:
+# network: {config: disabled}
+network:
+    version: 2
+    wifis:
+        renderer: networkd
+        wlan0:
+            access-points:
+                Ziroom_602:
+                    password: 265383ba57d81672f3f0f66e8f0cd865b081850202262a862723401f23bf16c3
+            dhcp4: no
+            optional: true
+            addresses: [192.168.199.119/24]
+            gateway4: 192.168.199.1
+            nameservers:
+              addresses: [127.0.0.53, 8.8.8.8]
