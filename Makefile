@@ -51,6 +51,9 @@ vim-plug:
 up-vim-plug:
 	mkdir -p ~/.vim/plugin && \cp -rf $(PWD)/plugin/* ~/.vim/plugin/
 
+install-net:
+	sudo \cp -f ./50-cloud-init.yaml /etc/netplan/
+
 up3rd:
 	# git submodule add git@github.com:xm-tech/z.lua.git z.lua
 	git submodule update --init --recursive
@@ -86,4 +89,4 @@ clean:
 	rm -f ~/.clang-format
 	rm -rf ~/.vim/plugin
 
-.PHONY: all dep conf-node install-pyenv install-pyenv-virtualenv install-python vim-plug up-vim-plug up3rd hosts install clean fix-libc-bin
+.PHONY: all dep conf-node install-pyenv install-pyenv-virtualenv install-python vim-plug up-vim-plug up3rd hosts install clean fix-libc-bin install-net
