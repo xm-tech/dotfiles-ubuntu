@@ -8,12 +8,10 @@ network:
     wifis:
         renderer: networkd
         wlan0:
-            # access-points:
-                # Ziroom_602:
-                    # password: 265383ba57d81672f3f0f66e8f0cd865b081850202262a862723401f23bf16c3
+            access-points:
             dhcp4: no
             optional: true
-            addresses: [192.168.199.119/24]
-            gateway4: 192.168.199.1
+            addresses: [192.168.0.119/24]
+            gateway4: 192.168.0.1
             nameservers:
               addresses: [127.0.0.53, 8.8.8.8]
