@@ -1,0 +1,14 @@
+sudo wpa_cli -i wlan0
+
+add_network
+
+# set ssid
+set_network 1 ssid "xxx"
+
+# set ssid password manager
+set_network 1 key_mgmt WPA-PSK
+
+# set ssid password
+set_network 1 psk "yyy"
+
+enable_network 1
