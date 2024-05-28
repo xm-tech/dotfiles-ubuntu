@@ -10,7 +10,8 @@ network:
         wlan0:
             access-points:
               "Ziroom_401":
-                password: "4001001111"
+                password: "a4bef98c0548f6180d43322404a94cf3b35784787a4e385aed03f44b699e4a84"
+
             dhcp4: no
             optional: true
             addresses: [192.168.0.119/24]
